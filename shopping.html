@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="shoptitle">Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom css  -->
+    <link rel="stylesheet" href="./css/shopping.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <!-- i18n -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.1.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.1/i18nextBrowserLanguageDetector.min.js"></script>
+</head>
+<body>
+    <!--Start Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+            <img src="./images/logo.png" alt="Logo" width="50" height="50" class="rounded-circle">
+            </a>
+            <div class="d-flex justify-content-end align-items-center ms-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-3">
+                <li class="nav-item"><a class="nav-link" href="index.html#home" data-i18n="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#about" data-i18n="about_us">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#services" data-i18n="services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact" data-i18n="contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link shop-link" href="#" data-i18n="shop">Shop</a></li>               
+                </ul>
+            </div>
+            <!-- Language Switcher --> 
+                <select id="languageSwitcher" class="language-switcher me-3">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option> 
+                </select>
+            <!-- Login Icon -->
+            <!-- <a href="EmployeeLogin.html" class="login-icon" title="Login">
+                <i class="bi bi-person-circle fs-3"></i>
+            </a> -->
+            <button class="cart-button position-relative" onclick="toggleCart()">
+                <i class="bi bi-cart"></i>
+                <span class="cart-badge badge bg-danger position-absolute top-0 start-100 translate-middle" id="cart-count">0</span>
+            </button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- End Navbar  -->
+    <!-- Products Section -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <!-- Sheep Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <!-- Sheep Image and Initial Information -->
+                    <img src="./images/products/sheepp.jpg" class="card-img-top" alt="Sheep" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="sheep">Sheep</h5>
+                        <p class="card-text"><strong data-i18n="price">Price:</strong> 50,000 <span data-i18n="currency">DZD</span></p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" onclick="addToCart('sheep',50000)" data-i18n="add_to_cart">Add to Cart</button>
+                            <button class="btn btn-secondary" onclick="toggleDetails('sheep-details')" data-i18n="details">Details</button>
+                        </div>
+                    </div>    
+                    <!-- Hidden Details Section -->
+                    <div class="card-body d-none" id="sheep-details">
+                        <h6><strong data-i18n="breed">Breed:</strong><span data-i18n="ouled_djellal">Ouled Djellal</span></h6>
+                        <p><strong data-i18n="age">Age:</strong> 1 <span data-i18n="year">year</span></p>
+                        <p><strong data-i18n="weight">Weight:</strong> 50-60 <span data-i18n="kg">kg</span></p>
+                        <ul>
+                            <li data-i18n="excellent_meat_quality">Excellent meat quality.</li>
+                            <li data-i18n="adapted_to_algerien_climate">Adapted to Algerian climate.</li>
+                            <li data-i18n="vaccinated_and_certified">Vaccinated and certified.</li>
+                        </ul>
+                        <p><strong data-i18n="location">Location:</strong> :<span data-i18n="djelfa">Djelfa</span></p>
+                        <h6><strong data-i18n="additional_services">Additional Services:</strong></h6>
+                        <ul>
+                            <li data-i18n="bulk_purchase_discounts">Bulk purchase discounts.</li>
+                            <li data-i18n="health_certificates_provided">Health certificates provided.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+            <!-- Cow Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <!-- Cow Image and Initial Information -->
+                    <img src="./images/products/cow5.jpg" class="card-img-top" alt="Cow" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="cow">Cow</h5>
+                        <p class="card-text"><strong data-i18n="price">Price:</strong> 400,000 <span data-i18n="currency">DZD</span></p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" onclick="addToCart('cow',400000)" data-i18n="add_to_cart">Add to Cart</button>
+                            <button class="btn btn-secondary" onclick="toggleDetails('cow-details')" data-i18n="details">Details</button>
+                        </div>
+                    </div>     
+                    <!-- Hidden Details Section -->
+                    <div class="card-body d-none" id="cow-details">
+                        <h6><strong data-i18n="breed">Breed:</strong><span data-i18n="holstein_friesian"> Holstein Friesian</span></h6>
+                        <p><strong data-i18n="age">Age:</strong> 2 <span data-i18n="years">years</span></p>
+                        <p><strong data-i18n="weight">Weight:</strong> 600 <span data-i18n="kg">kg</span></p>
+                        <ul>
+                            <li data-i18n="high_milk_production">High milk production (30 liters/day average).</li>
+                            <li data-i18n="calm_temperament">Calm temperament.</li>
+                            <li data-i18n="vaccinated_and_disease_free">Vaccinated and disease-free.</li>
+                        </ul>
+                        <p><strong data-i18n="location">Location:</strong> <span data-i18n="djelfa">Djelfa</span></p>
+                        <h6><strong data-i18n="additional_services">Additional Services:</strong></h6>
+                        <ul>
+                            <li data-i18n="transportation_available">Transportation available.</li>
+                            <li data-i18n="milk_equipment_recommendation">Milking equipment recommendations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Chicken Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <!-- Chicken Image and Initial Information -->
+                    <img src="./images/products/chikenn.jfif" class="card-img-top" alt="Chicken" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="chicken">Chicken</h5>
+                        <p class="card-text"><strong data-i18n="price">Price:</strong> 1,500 <span data-i18n="currency">DZD</span></p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" onclick="addToCart('chicken',15000)" data-i18n="add_to_cart">Add to Cart</button>
+                            <button class="btn btn-secondary" onclick="toggleDetails('chicken-details')" data-i18n="details">Details</button>
+                        </div>
+                    </div>
+            
+                    <!-- Hidden Details Section -->
+                    <div class="card-body d-none" id="chicken-details">
+                        <h6><strong data-i18n="breed">Breed:</strong><span data-i18n="free-range_local_breed">Free-range local breed</span></h6>
+                        <p><strong data-i18n="age">Age:</strong> 6 <span data-i18n="months">months</span></p>
+                        <p><strong data-i18n="weight">Weight:</strong> 2.5 <span data-i18n="kg">kg</span></p>
+                        <ul>
+                            <li data-i18n="high_egg-laying_capacity">High egg-laying capacity (200 eggs/year).</li>
+                            <li data-i18n="raised_organically">Raised organically.</li>
+                            <li data-i18n="fully_vaccinated">Fully vaccinated.</li>
+                        </ul>
+                        <p><strong data-i18n="location">Location:</strong><span data-i18n="djelfa">Djelfa</span></p>
+                        <h6><strong data-i18n="additional_services">Additional Services:</strong></h6>
+                        <ul>
+                            <li data-i18n="coop_building_guidance">Coop building guidance.</li>
+                            <li data-i18n="feed_supply_options">Feed supply options.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>                     
+             <!-- Corn Silage Card -->
+             <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <!-- Corn Silage Image and Initial Information -->
+                    <img src="./images/products/silagee.jpg" class="card-img-top" alt="Corn Silage" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="corn-silage">Corn Silage</h5>
+                        <p class="card-text"><strong data-i18n="price">Price:</strong> 40,000 <span data-i18n="currency">DZD</span> </p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" onclick="addToCart('corn-silage',40000)" data-i18n="add_to_cart">Add to Cart</button>
+                            <button class="btn btn-secondary" onclick="toggleDetails('corn-silage-details')" data-i18n="details">Details</button>
+                        </div>
+                    </div>
+            
+                    <!-- Hidden Details Section -->
+                    <div class="card-body d-none" id="corn-silage-details">
+                        <h6><strong data-i18n="type">Type:</strong> <span data-i18n="high_quality_silage_corn">High-quality silage corn</span></h6>
+                        <p><strong data-i18n="weight">Weight:</strong> 100 <span data-i18n="kg">kg</span></p>
+                        <ul>
+                            <li data-i18n="rich_in_energy_and_fiber">Rich in energy and fiber.</li>
+                            <li data-i18n="perfect_for_livestock_feed">Perfect for livestock feed.</li>
+                            <li data-i18n="produced_using_sustainable_practices">Produced using sustainable practices.</li>
+                        </ul>
+                        <p><strong data-i18n="location">Location:</strong> <span data-i18n="djelfa">Djelfa</span></p>
+                        <h6><strong data-i18n="additional_services">Additional Services:</strong></h6>
+                        <ul>
+                            <li data-i18n="Nutritional_advice_for_feeding">Nutritional advice for feeding.</li>
+                            <li data-i18n="bulk_storage_solutions">Bulk storage solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+            <!-- Milk Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <!-- Milk Image and Initial Information -->
+                    <img src="./images/products/milk.jpg" class="card-img-top" alt="Milk" loading="lazy">
+                    <div class="card-body">
+                        <h5 class="card-title" data-i18n="milk">Milk</h5>
+                        <p class="card-text"><strong data-i18n="price">Price:</strong> 50<span data-i18n="currency">DZD</span><span data-i18n="per_liter">per liter</span></p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" onclick="addToCart('milk',50)" data-i18n="add_to_cart">Add to Cart</button>
+                            <button class="btn btn-secondary" onclick="toggleDetails('milk-details')" data-i18n="details">Details</button>
+                        </div>
+                    </div>
+                    <!-- Hidden Details Section -->
+                    <div class="card-body d-none" id="milk-details">
+                        <h6><strong data-i18n="type">Type:</strong> :<span data-i18n="raw_cow_milk"> Raw cow milk</span></h6>
+                        <p><strong data-i18n="volume">Volume:</strong> 1 <span data-i18n="liter">liter</span></p>
+                        <ul>
+                            <li data-i18n="fresh_and_organic">100% fresh and organic.</li>
+                            <li data-i18n="rich_in_nutruents">Rich in nutrients.</li>
+                            <li data-i18n="collected_daily_from_healthy_cows">Collected daily from healthy cows.</li>
+                        </ul>
+                        <p><strong data-i18n="location">Location:</strong><span data-i18n="djelfa"> Djelfa</span></p>
+                        <h6><strong data-i18n="additional_services">Additional Services:</strong></h6>
+                        <ul>
+                            <li data-i18n="bulk_purchase_discounts">Bulk purchase discounts.</li>
+                            <li data-i18n="delivery_within-the_region">Delivery within the region.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>   
+   <!-- Sidebar Cart -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h4 data-i18n="your_cart">Your Cart</h4>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <ul id="cart-items" class="list-group mb-3"></ul>
+        <p><span data-i18n="total">Total: </span><span id="cart-total">0</span> </p>
+        <button class="btn btn-danger" onclick="clearCart()"data-i18n="clear_cart">Clear Cart</button>
+        <button class="btn btn-success" onclick="confirmOrder()"data-i18n="confirm_order">Confirm Order</button>
+
+
+    </div>
+    <!-- Hidden Section for Order Form -->
+    <div id="order-section" class="container my-4" style="display: none;">
+        <h2 class="text-center" data-i18n="confirm_order_heading">Confirm Your Order</h2>
+        
+        <!-- Make the table responsive -->
+        <div class="table-responsive">
+            <table id="order-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-i18n="product">Product</th>
+                        <th data-i18n="unit_price">Unit price DZD</th>
+                        <th data-i18n="quantity">Quantity</th>
+                        <th data-i18n="total">Total (DZD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Order items will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <form id="customer-form">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="customer-name" class="form-label" data-i18n="name">Name</label>
+                    <input type="text" class="form-control" id="customer-name" required>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="customer-email" class="form-label" data-i18n="email">Email</label>
+                    <input type="email" class="form-control" id="customer-email" required>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="customer-phone" class="form-label" data-i18n="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="customer-phone" required>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="delivery-date" class="form-label" data-i18n="deliverydate">Delivery Date</label>
+                    <input type="date" class="form-control" id="delivery-date" required>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="customer-address" class="form-label"data-i18n="address">Address</label>
+                    <input type="text" class="form-control" id="customer-address" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" data-i18n="submit_order">Submit Order</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./i18n.js"></script>
+    <script src="./js/shopping.js"></script>
+    <script>
+        // Preselect the saved language in the dropdown
+        const savedLanguage = localStorage.getItem("preferredLanguage") || "ar";
+        document.getElementById("languageSwitcher").value = savedLanguage;
+    </script>
+</body>
+</html>

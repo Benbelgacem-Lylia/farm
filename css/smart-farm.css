@@ -1,0 +1,77 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.smart-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.smart-btn:hover {
+  background: #45a049;
+}
+
+#actuator-status {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  margin: 0.5rem 0;
+}
+
+/* Ensure equal height for all cards */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 992px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row on large screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard {
+    grid-template-columns: 1fr; /* One card per row on small screens */
+  }
+}

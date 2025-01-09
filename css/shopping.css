@@ -1,0 +1,171 @@
+:root {
+    --main-color: #028410;
+    --secondary-color: #fbda04;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.col-md-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card img{
+    width: 100%;
+    height: 400px;
+}
+/* Styling for the cart button */
+.cart-button {
+    background-color: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 5px;
+}
+
+.cart-button i {
+    font-size: 1.3rem;
+}
+
+.cart-button:hover {
+    background-color: var(--main-color);
+    color: white;
+    transform: scale(1.1);
+}
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #f8f9fa;
+    padding: 20px;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+    overflow-y: auto;
+}
+.cart-sidebar.open {
+    right: 0;
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+
+.close-cart:hover {
+    color: red;
+}
+.product-details {
+    display: none; /* Hidden by default */
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+.card {
+    transition: all 0.3s ease-in-out;
+}
+.card.expanded-card {
+    transition: height 0.3s ease; /* Smooth animation */
+    height: auto; /* Let the card adjust dynamically based on content */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+.btn-secondary{
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+}
+.btn-secondary:hover{
+    color: white;
+    background-color: var(--secondary-color);
+}
+.btn-primary{
+    color: white;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+.btn-primary:hover{
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+.form-select:focus{
+    box-shadow: 0 0 8px 0 var(--secondary-color);
+}
+/* Style for the order section */
+#order-section {
+    max-width: 800px; /* Set a max-width to prevent it from being too wide */
+    margin: 20px auto; /* Center it on the page */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #order-section {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+/* Style for the table */
+#order-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#order-table th, #order-table td {
+    text-align: center;
+    padding: 10px;
+}
+
+#order-table td input {
+    width: 80px; /* Make input fields smaller */
+}
+
+/* Form Styling */
+#customer-form {
+    padding-top: 20px;
+}
+
+/* Buttons Styling */
+#customer-form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Scroll Animation */
+html {
+    scroll-behavior: smooth;
+}

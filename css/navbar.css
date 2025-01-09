@@ -1,0 +1,71 @@
+/* Start Navbar Styles */
+.navbar-light .navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--secondary-color);
+  }
+  
+  .navbar-brand {
+    flex-grow: 1;
+  }
+  
+  .navbar-brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  /* Login Icon */
+  .login-icon {
+    color: var(--main-color); /* Default color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .login-icon:hover {
+    color: var(--secondary-color); /* Hover color */
+  }
+  
+  /* Language Switcher Styling */
+  .language-switcher {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  .language-switcher option{
+    text-align: center;
+  }
+  .language-switcher option:hover{
+    background-color: var(--main-color);
+    color: white;
+  }
+  /* RTL Adjustment for Language Selector */
+  body[dir="rtl"] .language-switcher {
+    margin-right: auto; /* Adjust alignment for Arabic */
+    margin-left: 0;
+  }
+  i{
+    margin: 0 10px;
+  }
+  /* Flexbox Adjustments */
+  .d-flex {
+    display: flex !important;
+  }
+  
+  .ms-auto {
+    margin-left: auto !important;
+  }
+  
+  .me-3 {
+    margin-right: 1rem !important;
+  }

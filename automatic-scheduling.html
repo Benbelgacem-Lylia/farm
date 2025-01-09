@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="automatictaskschedulingtitle">Automatic Tasks Scheduling</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/services.css">
+  <!-- Font-awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- i18n -->
+  <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-http-backend@1.1.0/i18nextHttpBackend.min.js"></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.1/i18nextBrowserLanguageDetector.min.js"></script>
+</head>
+<body>
+    <!--Start Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="./images/logo.png" alt="Logo" width="50" height="50" class="rounded-circle">
+          </a>
+          <div class="d-flex justify-content-end align-items-center ms-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-3">
+                <li class="nav-item"><a class="nav-link" href="index.html#home" data-i18n="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#about" data-i18n="about_us">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#services" data-i18n="services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact" data-i18n="contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link shop-link" href="#" data-i18n="shop">Shop</a></li>
+              </ul>
+            </div>
+            <!-- Language Switcher -->
+            <select id="languageSwitcher" class="language-switcher me-3" onchange="changeLanguage(this.value)">
+              <option value="ar">العربية</option>
+              <option value="en">English</option>
+            </select>
+            <!-- Login Icon -->
+            <a href="EmployeeLogin.html" class="login-icon" title="Login">
+              <i class="bi bi-person-circle fs-3"></i>
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+    </nav>
+    <!-- End Navbar  -->
+    <!-- Automatic Scheduling Section 1 -->
+    <div class="container-fluid py-5 text-white section service-content-one">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Image on the Left -->
+            <div class="col-md-6">
+              <img src="./images/schedulingg.jpg" alt="Automatic Scheduling" class="img-fluid rounded" loading="lazy">
+            </div>
+            <!-- Text on the Right -->
+            <div class="col-md-6 mt-2">
+              <h2 class="mb-4" data-i18n="task_title">Automatic Scheduling for Tasks</h2>
+              <ul>
+                <li data-i18n="task_list1">Effortless allocation of tasks using real-time sensor data.</li>
+                <li data-i18n="task_list2">Optimized task timings to align with worker availability and sensor insights.</li>
+                <li data-i18n="task_list3">Automated notifications and updates to ensure smooth operations.</li>
+                <li data-i18n="task_list4">Enhanced efficiency through strategically scheduled tasks informed by soil and animal health data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Automatic Scheduling Section 2 -->
+    <div class="container-fluid py-5 text-dark section service-content-two">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Text on the Left -->
+            <div class="col-md-6 order-md-2">
+              <h2 class="mb-4" data-i18n="whychooseus">Why Choose Our Solution?</h2>
+              <ul>
+                <li data-i18n="task_why1">Minimizes human error with advanced scheduling algorithms.</li>
+                <li data-i18n="task_why2">Real-time updates keep all workers informed with the latest data.</li>
+                <li data-i18n="task_why3">Supports a wide range of task types and durations based on sensor data.</li>
+                <li data-i18n="task_why4">Customizable settings designed to meet the specific needs of your organization.</li>
+              </ul>
+            </div>
+            <!-- Image on the Right -->
+            <div class="col-md-6 order-md-1">
+              <img src="./images/scheduliiing.jpg" alt="Training Sessions" class="img-fluid rounded" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--Start Footer Section -->
+    <footer class="footer-section py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side: Company Name and Copyright -->
+                <div class="col-md-6 text-center text-white" data-i18n="Copyright">
+                    &copy; 2024 Al Mazraa Al jadida. All rights reserved.
+                </div>
+                <!-- Right Side: Social Media Icons -->
+                <div class="col-md-6 text-center text-white ">
+                    <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-link mx-3" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section  -->
+    <script src="./i18n.js"></script>
+    <script src="./js/services.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Preselect the saved language in the dropdown
+      const savedLanguage = localStorage.getItem("preferredLanguage") || "ar";
+      document.getElementById("languageSwitcher").value = savedLanguage;
+    </script>
+</body>
+</html>

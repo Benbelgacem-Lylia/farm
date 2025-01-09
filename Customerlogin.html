@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="login">Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Customerlogin.css">
+    <link rel="stylesheet" href="./css/navbar.css"/>
+    <!-- Font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- i18n -->
+    <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.1.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.1/i18nextBrowserLanguageDetector.min.js"></script>
+</head>
+<body>
+    <!--Start Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="./images/logo.png" alt="Logo" width="50" height="50" class="rounded-circle">
+          </a>
+          <div class="d-flex justify-content-end align-items-center ms-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-3">
+                <li class="nav-item"><a class="nav-link" href="index.html#home" data-i18n="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#about" data-i18n="about_us">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#index.html#services" data-i18n="services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact" data-i18n="contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="customerRegistration.html" data-i18n="shop">Shop</a></li>
+              </ul>
+            </div>
+            <!-- Language Switcher --> 
+             <select id="languageSwitcher" class="language-switcher me-3">
+               <option value="ar">العربية</option>
+               <option value="en">English</option> 
+               
+              </select>
+            <!-- Login Icon -->
+            <a href="EmployeeLogin.html" class="login-icon" title="Login">
+              <i class="bi bi-person-circle fs-3"></i>
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- End Navbar  -->
+    <div class="container">
+        <div class="login-form">
+            <h2 data-i18n="login">Login</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label" data-i18n="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label" data-i18n="password">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" data-i18n="login">Login</button>
+            </form>
+            <p class="register-link" > <span data-i18n="don'thaveanaccount">Don't have an account? </span><a href="customerRegistration.html" data-i18n="register">Register</a></p>
+        </div>
+    </div>
+    <script src="./i18n.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/Customerlogin.js"></script>
+    <script>
+      // Preselect the saved language in the dropdown
+      const savedLanguage = localStorage.getItem("preferredLanguage") || "ar";
+      document.getElementById("languageSwitcher").value = savedLanguage;
+    </script>
+</body>
+</html>

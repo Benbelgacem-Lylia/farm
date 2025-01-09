@@ -1,0 +1,47 @@
+/* Resources Cards Styles */
+.container {
+    margin-top: 100px; /* Prevents content from hiding under the fixed navbar */
+    margin-left: 40px;
+}
+
+/* Equal card size for all charts */
+.card {
+    min-height: 350px;  /* Ensures a minimum height for each card */
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+h4{
+    text-align: start;
+}
+.card-text {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+canvas {
+    width: 250px !important;  /* Make sure canvas fills the card */
+    height: 250px !important;  /* Fixed height for consistency */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100% !important;  /* Stacks the cards vertically on small screens */
+    }
+
+    .container {
+        margin-top: 120px; /* Adjust margin for better spacing */
+    }
+}

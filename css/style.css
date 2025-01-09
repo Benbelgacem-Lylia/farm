@@ -1,0 +1,408 @@
+/* Global Style */
+:root {
+  --main-color: #028410;
+  --secondary-color: #fbda04;
+}
+body {
+    direction: ltr;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+/*  Start Landing Section */
+.landing {
+  height: 100vh;
+  background: url('../images/landing_background.jpg') no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Welcome Box Styling */
+.welcome-box {
+  background: rgba(2, 132, 16, 0.1); /* Semi-transparent green */
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  display: inline-block;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+/* Gradient Border Effect */
+.welcome-box:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+  background: linear-gradient(90deg, #1ed10c, #028410);
+  border-radius: 17px;
+}
+
+/* Welcome Text Styling */
+.welcome-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4); /* Text drop shadow */
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.8rem; /* Responsive font size for smaller screens */
+  }
+
+  .welcome-box {
+    padding: 15px 30px;
+  }
+}
+/* End Landing Section  */
+/* --------------------------------------------------------------------------------------------------------- */
+/* Start About Section */
+.about-section {
+  padding: 60px 20px;
+  background-color: var(--white);
+}
+.about-header {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 3px;
+  position: relative;
+}
+.about-header::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: var(--main-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about-section .about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.about-section .about-text {
+  flex: 1 1 50%;
+  text-align: center;
+}
+.about-section .about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: start;
+}
+.about-text .shop-btn{
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+
+}
+.shop-btn:hover{
+  background-color: var(--secondary-color)!important;
+  color: white;
+}
+.about-section .about-image {
+  flex: 1 1 40%;
+  position: relative;
+  overflow: hidden;
+}
+.about-section .about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.about-section .about-image .shape {
+  position: absolute;
+  background: var(--main-color);
+  opacity: 0.7;
+}
+
+.about-section .about-image .top-right {
+  top: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px 15px 30px 15px;
+}
+
+.about-section .about-image .bottom-left {
+  bottom: -10px;
+  left: -10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px 15px 30px 15px;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .about-section .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-section .about-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section .about-header {
+    font-size: 1.8rem;
+  }
+
+  .about-section .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about-section .about-text .shop-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+/* End About Section  */
+/* ----------------------------------------------------------------------------------------------------------- */
+/* Start Services Section */
+.services-section {
+  background-color: var(--main-color);
+  padding: 50px 0;
+  margin-top: 20px;
+}
+
+.services-header {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.services-header::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: var(--secondary-color); /* Assuming secondary color */
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  height: 100%; /* Ensure all cards take the full height */
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for card */
+}
+
+.card img {
+  border-radius: 10px 10px 0 0; /* Rounded corners for the top of the image */
+  object-fit: cover; /* Ensures the image fits within the card */
+  height: 200px; /* Fixed height for images */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Ensure button is at the bottom */
+  flex: 1; /* Allow the body to grow and fill available space */
+  padding: 15px;
+  text-align: center; /* Center the content inside the card */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.card-body .btn-more {
+  background-color: #fff;
+  color: var(--main-color);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-body .btn-more:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 180px; /* Reduce image size on smaller screens */
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 1.1rem; /* Smaller title font for mobile */
+  }
+
+  .card-text {
+    font-size: 0.9rem; /* Adjust text size for mobile */
+  }
+}
+/* End Services Section  */
+/* ----------------------------------------------------------------------------------------------------------- */
+/*Start Contact Section*/
+.contact-section {
+  background-color: #fff;
+  padding: 50px 0;
+  margin-top: 20px;
+}
+
+.contact-header {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.contact-header::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: var(--main-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+/* Change focus color to secondary color */
+.form-control:focus {
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 4px var(--secondary-color)!important;
+  outline: none;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+#contact-form .send-btn {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact-form .send-btn:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-header {
+      font-size: 2.5rem;
+  }
+
+  .form-control {
+      font-size: 0.9rem;
+  }
+
+  textarea.form-control {
+      height: 150px;
+  }
+
+  .send-btn {
+      font-size: 13px;
+      padding: 10px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-header {
+      font-size: 2rem;
+      margin-bottom: 20px;
+  }
+
+  textarea.form-control {
+      height: 120px;
+  }
+}
+/* End Contact Section  */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* Start Footer Section  */
+.footer-section {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.social-link {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  text-align: end;
+}
+
+.social-link:hover {
+  color: var(--secondary-color); /* Hover changes to secondary color */
+}
+
+/* Responsive Alignment */
+@media (max-width: 768px) {
+  .footer-section .text-md-start {
+      text-align: center !important;
+  }
+
+  .footer-section .text-md-end {
+      text-align: center !important;
+  }
+}
+/* End Footer Section  */
+  

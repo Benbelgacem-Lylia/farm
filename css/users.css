@@ -1,0 +1,71 @@
+:root{
+    --main-color: #028410;
+    --secondary-color: #fbda04;
+    --shadow-color:rgba(254,218,4,0.25);
+}
+.table-head{
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+}
+.main-content{
+    margin-left: 260px;
+}
+@media (max-width:768px){
+    .main-content{
+        margin-left: 0;
+    }
+}
+.main-content h1{
+    margin-top: 30px;
+}
+.u-header{
+   color: var(--main-color);
+   text-align: left;
+   margin-left: 15px;
+}
+.table{
+    max-width: 90%;
+    margin-left: 15px;
+}
+.btn-edit{
+    background-color: #fbda04;
+    color: white;
+}
+.btn-edit:hover{
+    background-color: #bba200;
+    color: white;
+}
+.btn-delete{
+    background-color: #e14627;
+    color: white;
+}
+.btn-delete:hover{
+    background-color: #ba361c;
+    color: white;
+}
+td{
+    text-align: center;
+}
+.a-btn{
+    background-color: var(--main-color);
+    color: white;
+    margin-left: 15px;
+}
+.a-btn:hover{
+    background-color:#01710d;
+    color: white;
+}
+.card{
+    max-width: 90%;
+    margin-left: 15px;
+}
+/* Change border color and box shadow on focus */
+.form-control:focus ,.form-select:focus{
+    border-color: var(--shadow-color); /* Orange border color */
+    box-shadow: 0 0 0 0.25rem var(--shadow-color); /* Orange box shadow */
+    outline: none; /* Optional: Remove the default outline for better aesthetics */
+}
+#addUserBtn{
+    width: 150px;
+}

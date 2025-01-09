@@ -1,0 +1,148 @@
+/*Global Rules */
+:root {
+    --main-color: #028410;
+    --secondary-color: #fbda04;
+}
+body {
+    direction: ltr;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+/* Start Navbar Styles */
+.navbar-light .navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+} 
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--secondary-color);
+}
+.navbar-brand {
+    flex-grow: 1;
+}
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/* Login Icon */
+.login-icon {
+    color: var(--main-color); /* Default color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.login-icon:hover {
+    color: var(--secondary-color); /* Hover color */
+}
+/* Language Switcher Styling */
+  .language-switcher {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.language-switcher option{
+    text-align: center;
+}
+.language-switcher option:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+/* RTL Adjustment for Language Selector */
+body[dir="rtl"] .language-switcher {
+    margin-right: auto; /* Adjust alignment for Arabic */
+    margin-left: 0;
+}
+i{
+    margin: 0 10px;
+}
+/* Flexbox Adjustments */
+.d-flex {
+    display: flex !important;
+}
+.ms-auto {
+    margin-left: auto !important;
+}
+.me-3 {
+    margin-right: 1rem !important;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+/* Adjust for Fixed Navbar */
+.section {
+    padding-top: 6rem; /* Adjust this value based on your navbar's height */
+}
+.service-content-one{
+    margin-top:50px;
+    background-color: var(--main-color);
+}
+.service-content-two{
+    background-color: var(--secondary-color);
+}
+@media (max-width: 768px) {
+    .section {
+        padding-top: 6rem; /* Slightly larger padding for smaller screens */
+    }
+}
+.section h2 {
+    font-weight: bold;
+}
+.section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+.section ul li {
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+}
+.img-fluid {
+    max-height: 400px;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .img-fluid {
+      max-height: 300px;
+    }
+  }
+/* Footer  */
+.footer-section {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+  
+.social-link {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+.social-link:hover {
+    color: var(--secondary-color); /* Hover changes to secondary color */
+}
+  
+/* Responsive Alignment */
+@media (max-width: 768px) {
+    .footer-section .text-md-start {
+        text-align: center !important;
+    }
+  
+    .footer-section .text-md-end {
+        text-align: center !important;
+    }
+}

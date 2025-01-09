@@ -1,0 +1,49 @@
+/* styles.css */
+.charts, .feed-table {
+    margin: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.chart-container {
+    margin: 1rem 0;
+}  
+canvas {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+table th {
+    background: #4CAF50;
+    color: white;
+}
+.btn-add {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 15px;
+}
+.btn-add:hover {
+    background: #45a049;
+}
+.hidden {
+    display: none;
+}
+#entry-form-container {
+    margin-top: 1rem;
+}
+
+  

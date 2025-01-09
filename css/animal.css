@@ -1,0 +1,179 @@
+/* styles.css */
+:root {
+    --main-color: #028410;
+    --secondary-color: #fbda04;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+header {
+    text-align: center;
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+}
+.map-section, .health-cards, .vet-table {
+    margin: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.map-section #map {
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/map.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Container Styles */
+.health-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(120deg, #f6d365, #fda085); /* Gradient background */
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Card Styles */
+.card {
+    flex: 1;
+    min-width: 250px; /* Ensures cards don't shrink too much */
+    max-width: 300px; /* Optional: limits card size */
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-10px); /* Lifts the card */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow */
+}
+
+/* Headings */
+.card h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Text Styles */
+.card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.card span {
+    font-weight: bold;
+    color: #f76c6c; /* Highlighted color for numbers */
+}
+
+/* Animations */
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .health-cards {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 1.5rem; /* Increase spacing for better readability */
+        padding: 1rem;
+    }
+
+    .card {
+        max-width: none; /* Allow cards to use the full width */
+        width: 100%; /* Cards fill the available space */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+
+    .card h3 {
+        font-size: 1rem; /* Adjust heading size for readability */
+    }
+
+    .card p {
+        font-size: 0.9rem; /* Adjust text size */
+    }
+}
+-card {
+    background: #e8f5e9;
+    color: #388e3c;
+    border: 1px solid #a5d6a7;
+}
+
+.an-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.an-btn:hover {
+    background: #45a049;
+   
+}
+
+.hidden {
+    display: none;
+}
+
+#date-picker-container {
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background: #4CAF50;
+    color: white;
+}
+.schedule-btn{
+    margin: 10px;
+}

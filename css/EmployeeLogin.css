@@ -1,0 +1,99 @@
+:root {
+    --main-color: #028410;
+    --secondary-color: #fbda04;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    direction: ltr;
+    text-align: left;
+}
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 80px;
+}
+
+.card h2 {
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+.form-control {
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(251, 218, 4, 0.5);
+}
+
+.btn-main-color {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-main-color:hover {
+    background-color: darkgreen;
+}
+
+#error-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+#login-form p{
+    color: var(--secondary-color);
+    text-align: center;
+}
+@media (max-width: 576px) {
+    
+    .card {
+        padding: 30px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .form-control, .btn-main-color {
+        font-size: 14px;
+    }
+}
